@@ -1,3 +1,5 @@
+package tsb.estructuras;
+
 import java.util.Iterator;
 
 public class Lista <T extends Comparable> implements Iterable<T> {

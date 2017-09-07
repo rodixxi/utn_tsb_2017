@@ -1,16 +1,16 @@
 import org.junit.Before;
 import org.junit.Test;
-import tsb.estructuras.Lista;
+import tsb.estructuras.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class ListaTest {
+public class ArrayListTest {
 
-    Lista lista;
+    private ArrayList<Integer> lista;
 
     @Before
     public void setup() {
-        lista = new Lista();
+        lista = new ArrayList<>();
     }
 
     @Test
@@ -26,10 +26,10 @@ public class ListaTest {
         assertEquals("[1]", lista.toString());
         lista.add(2);
         assertEquals(2, lista.size());
-        assertEquals("[2, 1]", lista.toString());
+        assertEquals("[1, 2]", lista.toString());
         lista.add(3);
         assertEquals(3, lista.size());
-        assertEquals("[3, 2, 1]", lista.toString());
+        assertEquals("[1, 2, 3]", lista.toString());
     }
 
     @Test
@@ -38,9 +38,9 @@ public class ListaTest {
         lista.add(2);
         lista.add(3);
 
-        assertEquals(3, lista.get(0));
-        assertEquals(2, lista.get(1));
-        assertEquals(1, lista.get(2));
+        assertEquals(1, (long) lista.get(0));
+        assertEquals(2, (long) lista.get(1));
+        assertEquals(3, (long) lista.get(2));
     }
 
     @Test(expected = IndexOutOfBoundsException.class)

@@ -1,8 +1,8 @@
-import java.util.ArrayList;
-import java.util.Map;
+import tsb.estructuras.Lista;
 import java.util.Random;
 
 public class Principal {
+
     public static void main(String[] args) {
 
         Random random = new Random();
@@ -25,7 +25,6 @@ public class Principal {
         despues = System.nanoTime();
         System.out.println("La suma es: " + suma);
         System.out.println("Tiempo consumido: " + (despues - antes));
-        
 
     }
 }
