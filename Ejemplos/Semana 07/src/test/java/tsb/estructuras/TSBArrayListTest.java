@@ -3,6 +3,8 @@ package tsb.estructuras;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Iterator;
+
 import static org.junit.Assert.*;
 
 public class TSBArrayListTest {
@@ -70,4 +72,48 @@ public class TSBArrayListTest {
         list.add(11);
         assertEquals(11, list.size());
     }
+
+    @Test
+    public void testRemove() {
+        Integer[] v = {1, 2, 3, 4, 5};
+        list.addAll(v);
+        Integer e = list.remove(2);
+        assertEquals(Integer.valueOf(3), e);
+        assertEquals(4, list.size());
+        assertEquals(Integer.valueOf(2), list.get(1));
+        assertEquals(Integer.valueOf(4), list.get(2));
+    }
+
+    @Test
+    public void testIterator() {
+        Integer[] v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        list.addAll(v);
+
+        Iterator<Integer> it = list.iterator();
+        int i = 0;
+        while(it.hasNext()) {
+            Integer aux = it.next();
+            assertEquals(v[i], aux);
+            i ++;
+        }
+    }
+
+    @Test
+    public void testIteratorRemove() {
+        Integer[] v = {1, 2, 3, 4, 5};
+        list.addAll(v);
+
+        Iterator<Integer> it = list.iterator();
+        while(it.hasNext()) {
+            Integer aux = it.next();
+            if (aux == 3) {
+                it.remove();
+            }
+        }
+        assertEquals(4, list.size());
+        assertEquals(Integer.valueOf(2), list.get(1));
+        assertEquals(Integer.valueOf(4), list.get(2));
+    }
+
+
 }
