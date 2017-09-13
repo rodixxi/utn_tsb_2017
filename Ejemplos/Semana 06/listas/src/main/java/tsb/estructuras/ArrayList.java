@@ -1,6 +1,8 @@
 package tsb.estructuras;
 
-public class ArrayList<T> {
+import java.util.Iterator;
+
+public class ArrayList<T> implements Iterable<T>{
 
     private Object[] v;
     private int size;
@@ -39,5 +41,31 @@ public class ArrayList<T> {
 
         sb.append("]");
         return sb.toString();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return null;
+    }
+
+    private class ArrayListIterator implements Iterator<T> {
+
+        int actual;
+
+        public ArrayListIterator() {
+            actual = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return actual < size;
+        }
+
+        @Override
+        public T next() {
+            Object valor = v[actual];
+            actual ++;
+            return (T)valor;
+        }
     }
 }
