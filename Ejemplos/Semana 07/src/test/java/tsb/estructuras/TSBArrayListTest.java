@@ -56,10 +56,18 @@ public class TSBArrayListTest {
 
     @Test
     public void testAddAll() {
-        Integer[] v = {1,2,3,4};
+        Integer[] v = {1, 2, 3, 4};
         list.addAll(v);
         for (int i = 0; i < v.length; i++) {
             assertEquals(v[i], list.get(i));
         }
+    }
+
+    @Test
+    public void testIncrementoTamaño() {
+        Integer[] v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        list.addAll(v);
+        list.add(11);
+        assertEquals(11, list.size());
     }
 }

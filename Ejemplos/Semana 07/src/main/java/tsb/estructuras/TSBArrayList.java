@@ -8,13 +8,28 @@ public class TSBArrayList<E> {
     private E[] items;
     private int size;
 
+    public TSBArrayList(int initialCapacity) {
+        items = (E[]) new Object[initialCapacity];
+    }
+
     public TSBArrayList() {
         items = (E[]) new Object[10];
     }
 
     public void add(E x) {
+        if(items.length == size) {
+            ensureCapacity(items.length * 2);
+        }
         items[size] = x;
         size ++;
+    }
+
+    private void ensureCapacity(int newLength) {
+        if (items.length < newLength ) {
+            Object[] aux = new Object[newLength];
+            System.arraycopy(items, 0,aux, 0, size);
+            items = (E[]) aux;
+        }
     }
 
     public E remove(int index) {
