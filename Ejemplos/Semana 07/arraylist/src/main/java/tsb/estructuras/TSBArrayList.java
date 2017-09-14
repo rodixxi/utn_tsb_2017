@@ -1,10 +1,11 @@
 package tsb.estructuras;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class TSBArrayList<E> implements Iterable<E>{
+public class TSBArrayList<E> implements Iterable<E>, Serializable{
 
 
     private E[] items;
