@@ -1,0 +1,18 @@
+Hacer un sistema para manejo de biblioteca que permita lo siguiente:
+
+- Cargar/Mantener un vector de libros. De cada libro se conoce:
+    codigo
+    titulo
+    autor
+
+- Cargar/Mantener un vector de socios. Cada socio contiene
+    dni
+    nombre
+
+- Permitir prestar uno o mas libros a un socio
+- Dado un código de libro determinar si el libro está disponible, o si alguien lo tiene
+- Devolver un libro.
+- Listar los libros prestados
+- Mostrar los libros que retiró un socio, y si los devolvió
+
+Utilizar la clase TSBArrayList y Unit test para hacer el programa
